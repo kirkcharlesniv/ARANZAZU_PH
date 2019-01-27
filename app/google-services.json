@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "516977882190",
+    "firebase_url": "https://aranzazu-app.firebaseio.com",
+    "project_id": "aranzazu-app",
+    "storage_bucket": "aranzazu-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:516977882190:android:b55363a6b3393605",
+        "android_client_info": {
+          "package_name": "ph.aranzazushrine.aranzazuph"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "516977882190-tpf0rtk89u0gpsa1cg3luub2m5afdcg5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "ph.aranzazushrine.aranzazuph",
+            "certificate_hash": "482ac53dc2d99a5771d1e5bd39ee0d497d92379e"
+          }
+        },
+        {
+          "client_id": "516977882190-cd4t6uoqh4ppspd4p1h9gfc6b94nhcqk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDV5xgcmafGppS04CABzMbMXVy8cmUB79c"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "516977882190-cd4t6uoqh4ppspd4p1h9gfc6b94nhcqk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
