@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">Aranzazu PH</string>
-    <string name="AppName">Aranzazu <sup><small>PH</small></sup></string>
     <string name="appName">Aranzazu PH</string>
     <string name="email">Email</string>
     <string name="registerQuestionText">You don\'t have any account?</string>
@@ -13,18 +12,10 @@
     <string name="name">Name</string>
     <string name="confirmPassword">Confirm Password</string>
     <string name="profilePictureDesc">Profile picture for your account</string>
-    <string name="loginIntroText">You already have an an account?</string>
-    <string name="title_activity_home">HomeActivity</string>
+    <string name="loginIntroText">You already have an account?</string>
     <string name="facebook_app_id">336217800567698</string>
-    <string name="fb_login_protocol_scheme">fb336217800567698</string>
     <string name="sendText">Send</string>
     <string name="forgotPasswordIntroText">Please enter the email address associated with your email. We will email you a link to reset your password.</string>
     <string name="forgotPasswordText">Forgot your password?</string>
     <string name="forgot_password_icon">Forgot Password Icon</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
-    <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
 </resources>

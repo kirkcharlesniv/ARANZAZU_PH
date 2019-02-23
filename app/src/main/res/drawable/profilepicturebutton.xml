@@ -9,7 +9,7 @@
                 android:startColor="#F58524"
                 android:type="linear" />
             <stroke
-                android:width="3dp"
+                android:width="3sp"
                 android:color="#fff" />
         </shape>
     </item>

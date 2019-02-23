@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:icon="@drawable/selector_news"
+        android:title="" />
+    <item
+        android:icon="@drawable/selector_location"
+        android:title="" />
+    <item
+        android:icon="@drawable/selector_bible"
+        android:title="" />
+    <item
+        android:icon="@drawable/selector_resources"
+        android:title="" />
+    <item
+        android:icon="@drawable/selector_menu"
+        android:title="" />
+</menu>

@@ -62,7 +62,7 @@ public class RegisterActivity extends AppCompatActivity {
         userPassword = findViewById(R.id.passwordField);
         userPasswordConfirm = findViewById(R.id.confirmPasswordField);
         btnRegister = findViewById(R.id.loginButton);
-        btnPicture = findViewById(R.id.addProfilePictureButton);
+        btnPicture = findViewById(R.id.adsprofilePictureButton);
         profilePicture = findViewById(R.id.profilePicture);
 
         nameInput = findViewById(R.id.nameInputLayout);
@@ -88,46 +88,35 @@ public class RegisterActivity extends AppCompatActivity {
                 final String email = userEmail.getText().toString();
                 final String password = userPassword.getText().toString();
                 final String confirmPassword = userPasswordConfirm.getText().toString();
-                int errorStatus = 0;
 
                 if (name.isEmpty()) {
                     nameInput.setError("You need to enter a name.");
-                    errorStatus = 1;
                 } else {
                     nameInput.setError(null);
                 }
 
                 if (email.isEmpty()) {
                     emailInput.setError("You need to enter an email address.");
-                    errorStatus = 1;
                 } else {
                     emailInput.setError(null);
                 }
 
                 if (password.isEmpty()) {
                     passwordInput.setError("You need to enter a password with at least 8 characters.");
-                    errorStatus = 1;
                 } else if (!password.isEmpty() && password.length() <= 8) {
                     passwordInput.setError("Your password must contain at least 8 characters.");
-                    errorStatus = 1;
                 } else {
                     passwordInput.setError(null);
-                    errorStatus = 0;
                 }
 
                 if (confirmPassword.isEmpty()) {
                     confirmPasswordInput.setError("You need to confirm your password.");
                 } else if (!password.equals(confirmPassword)) {
                     confirmPasswordInput.setError("Your confirmation password doesn't match.");
-                    errorStatus = 1;
                 } else {
                     confirmPasswordInput.setError(null);
-                    errorStatus = 0;
                 }
-
-                if (errorStatus == 0) {
-                    CreateUserAccount(name, email, password);
-                }
+                CreateUserAccount(name, email, password);
             }
         });
     }

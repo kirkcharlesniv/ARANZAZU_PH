@@ -9,22 +9,22 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:elevation="300dp"
+        android:elevation="300sp"
         android:text="@string/plusSymbol"
         android:textColor="#fff"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/addProfilePictureButton"
-        app:layout_constraintEnd_toEndOf="@+id/addProfilePictureButton"
-        app:layout_constraintStart_toStartOf="@+id/addProfilePictureButton"
-        app:layout_constraintTop_toTopOf="@+id/addProfilePictureButton" />
+        app:layout_constraintBottom_toBottomOf="@+id/adsprofilePictureButton"
+        app:layout_constraintEnd_toEndOf="@+id/adsprofilePictureButton"
+        app:layout_constraintStart_toStartOf="@+id/adsprofilePictureButton"
+        app:layout_constraintTop_toTopOf="@+id/adsprofilePictureButton" />
 
     <com.mikhaellopez.circularimageview.CircularImageView
         android:id="@+id/profilePicture"
-        android:layout_width="130dp"
-        android:layout_height="130dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="36dp"
+        android:layout_width="130sp"
+        android:layout_height="130sp"
+        android:layout_marginStart="8sp"
+        android:layout_marginTop="36sp"
         android:contentDescription="@string/profilePictureDesc"
         android:src="@drawable/profile"
         app:layout_constraintEnd_toEndOf="parent"
@@ -34,15 +34,15 @@
         app:srcCompat="@drawable/profile" />
 
     <Button
-        android:id="@+id/addProfilePictureButton"
-        android:layout_width="46dp"
+        android:id="@+id/adsprofilePictureButton"
+        android:layout_width="46sp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="104dp"
+        android:layout_marginTop="104sp"
         android:background="@drawable/profilepicturebutton"
         android:fontFamily="sans-serif"
         android:textColor="@android:color/white"
         android:textSize="30sp"
-        android:translationZ="5dp"
+        android:translationZ="5sp"
         app:layout_constraintEnd_toEndOf="@+id/profilePicture"
         app:layout_constraintHorizontal_bias="0.523"
         app:layout_constraintStart_toStartOf="@+id/profilePicture"
@@ -50,15 +50,15 @@
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/nameInputLayout"
-        android:layout_width="300dp"
+        android:layout_width="300sp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="72dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8sp"
+        android:layout_marginTop="72sp"
+        android:layout_marginEnd="8sp"
         app:errorEnabled="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/addProfilePictureButton">
+        app:layout_constraintTop_toTopOf="@+id/adsprofilePictureButton">
 
         <EditText
             android:id="@+id/nameField"
@@ -74,9 +74,9 @@
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/emailInputLayout"
-        android:layout_width="300dp"
+        android:layout_width="300sp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="5sp"
         app:errorEnabled="true"
         app:layout_constraintEnd_toEndOf="@+id/nameInputLayout"
         app:layout_constraintHorizontal_bias="0.0"
@@ -96,9 +96,9 @@
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/passwordInputLayout"
-        android:layout_width="300dp"
+        android:layout_width="300sp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="5sp"
         app:errorEnabled="true"
         app:layout_constraintEnd_toEndOf="@+id/emailInputLayout"
         app:layout_constraintStart_toStartOf="@+id/emailInputLayout"
@@ -118,9 +118,9 @@
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/confirmPasswordInputLayout"
-        android:layout_width="300dp"
+        android:layout_width="300sp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="5sp"
         app:errorEnabled="true"
         app:layout_constraintEnd_toEndOf="@+id/passwordInputLayout"
         app:layout_constraintStart_toStartOf="@+id/passwordInputLayout"
@@ -140,14 +140,14 @@
 
     <Button
         android:id="@+id/loginButton"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="0sp"
+        android:layout_height="50sp"
+        android:layout_marginTop="20sp"
         android:background="@drawable/gradientcolor"
         android:drawableEnd="@drawable/ic_keyboard_arrow_right_white_24dp"
         android:gravity="start|center_vertical"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
+        android:paddingLeft="10sp"
+        android:paddingRight="10sp"
         android:text="@string/register"
         android:textAllCaps="false"
         android:textColor="#fff"
@@ -160,8 +160,8 @@
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginStart="16sp"
+        android:layout_marginTop="28sp"
         android:text="@string/loginIntroText"
         app:layout_constraintStart_toStartOf="@+id/loginButton"
         app:layout_constraintTop_toBottomOf="@+id/loginButton" />
@@ -170,8 +170,8 @@
         android:id="@+id/loginText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginStart="5sp"
+        android:layout_marginEnd="8sp"
         android:text="@string/login"
         android:textColor="#E25E31"
         android:textStyle="bold"
