@@ -1,4 +1,4 @@
-package ph.aranzazushrine.aranzazuph;
+package ph.aranzazushrine.aranzazuph.Fragments;
 
 
 import android.os.Bundle;
@@ -7,14 +7,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import ph.aranzazushrine.aranzazuph.R;
+
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class EventsFragment extends Fragment {
+public class BibleFragment extends Fragment {
 
 
-    public EventsFragment() {
+    public BibleFragment() {
         // Required empty public constructor
     }
 
@@ -23,7 +25,7 @@ public class EventsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_events, container, false);
+        return inflater.inflate(R.layout.fragment_bible, container, false);
     }
 
 }
