@@ -47,5 +47,6 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
     implementation 'com.squareup.retrofit2:retrofit:2.5.0'
     implementation 'org.ocpsoft.prettytime:prettytime:4.0.1.Final'
+    implementation 'com.gjiazhe:scrollparallaximageview:1.0'
 }
 apply plugin: 'com.google.gms.google-services'

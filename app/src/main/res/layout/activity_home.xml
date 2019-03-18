@@ -16,8 +16,10 @@
         app:layout_constraintBottom_toTopOf="@+id/view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        android:layout_above="@+id/bottom_navigation_view"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!--Border on Top of Bottom Navigation View-->
     <View
         android:id="@+id/view"
         android:layout_width="match_parent"
@@ -28,7 +30,7 @@
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/bottom_navigation_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="56dp"
         android:background="#fff"
         app:labelVisibilityMode="unlabeled"
         app:layout_constraintBottom_toBottomOf="parent"

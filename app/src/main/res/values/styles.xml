@@ -8,6 +8,7 @@
         <item name="colorAccent">@color/colorAccent</item>
 
         <item name="colorControlActivated">#6D6D6D</item>
+        <item name="android:windowContentTransitions">true</item>
     </style>
 
 </resources>

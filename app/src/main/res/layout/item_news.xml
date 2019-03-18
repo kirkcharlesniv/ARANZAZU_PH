@@ -6,6 +6,7 @@
     android:orientation="vertical">
 
     <LinearLayout
+        android:background="?android:attr/selectableItemBackground"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -15,6 +16,7 @@
 
         <ImageView
             android:id="@+id/newsImage"
+            android:transitionName="newsImage"
             android:layout_width="321dp"
             android:layout_height="144dp"
             android:layout_gravity="center_horizontal"
@@ -34,7 +36,7 @@
             tools:layout_editor_absoluteY="151dp" />
 
         <TextView
-            android:id="@+id/newsDesc"
+            android:id="@+id/detailDesc"
             android:layout_width="321dp"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-light"
@@ -45,7 +47,7 @@
             tools:layout_editor_absoluteY="170dp" />
 
         <TextView
-            android:id="@+id/newsTime"
+            android:id="@+id/detailTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="9dp"

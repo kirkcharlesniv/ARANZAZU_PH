@@ -23,7 +23,7 @@ import ph.aranzazushrine.aranzazuph.Models.News;
 public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
     Context mContext;
     List<News> news;
-    OnItemClickListener onItemClickListener;
+    private OnItemClickListener onItemClickListener;
 
     public Adapter(Context mContext, List<News> news) {
         this.mContext = mContext;
@@ -33,7 +33,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(mContext).inflate(R.layout.news_item, viewGroup, false);
+        View view = LayoutInflater.from(mContext).inflate(R.layout.item_news, viewGroup, false);
         return new MyViewHolder(view, onItemClickListener);
     }
 
@@ -78,10 +78,11 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
         public MyViewHolder(@NonNull View itemView, OnItemClickListener onItemClickListener) {
             super(itemView);
 
+            itemView.setOnClickListener(this);
             newsImage = itemView.findViewById(R.id.newsImage);
             newsHeader = itemView.findViewById(R.id.newsHeader);
-            newsDesc = itemView.findViewById(R.id.newsDesc);
-            newsTime = itemView.findViewById(R.id.newsTime);
+            newsDesc = itemView.findViewById(R.id.detailDesc);
+            newsTime = itemView.findViewById(R.id.detailTime);
 
             this.onItemClickListener = onItemClickListener;
         }
