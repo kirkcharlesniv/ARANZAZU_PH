@@ -20,6 +20,9 @@ public class News {
     @SerializedName("excerpt")
     @Expose
     private String excerpt;
+    @SerializedName("author")
+    @Expose
+    private Author author;
 
     public int getId() {
         return id;
@@ -59,5 +62,13 @@ public class News {
 
     public void setExcerpt(String excerpt) {
         this.excerpt = excerpt;
+    }
+
+    public Author getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(Author author) {
+        this.author = author;
     }
 }

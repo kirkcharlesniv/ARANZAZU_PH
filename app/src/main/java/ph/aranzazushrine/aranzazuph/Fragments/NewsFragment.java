@@ -3,6 +3,7 @@ package ph.aranzazushrine.aranzazuph.Fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.app.Fragment;
@@ -21,6 +22,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import ph.aranzazushrine.aranzazuph.API.ApiClient;
 import ph.aranzazushrine.aranzazuph.API.ApiInterface;
@@ -53,7 +55,7 @@ public class NewsFragment extends Fragment implements SwipeRefreshLayout.OnRefre
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         v = inflater.inflate(R.layout.fragment_news, container, false);
@@ -89,7 +91,7 @@ public class NewsFragment extends Fragment implements SwipeRefreshLayout.OnRefre
         call = apiInterface.getNews();
         call.enqueue(new Callback<List<News>>() {
             @Override
-            public void onResponse(Call<List<News>> call, Response<List<News>> response) {
+            public void onResponse(@NonNull Call<List<News>> call, @NonNull Response<List<News>> response) {
                 if (response.body() != null) {
                     if (!news.isEmpty()) {
                         news.clear();
@@ -108,7 +110,7 @@ public class NewsFragment extends Fragment implements SwipeRefreshLayout.OnRefre
             }
 
             @Override
-            public void onFailure(Call<List<News>> call, Throwable t) {
+            public void onFailure(@NonNull Call<List<News>> call, @NonNull Throwable t) {
                 Log.d("Error: ", t.toString());
             }
         });
@@ -130,7 +132,7 @@ public class NewsFragment extends Fragment implements SwipeRefreshLayout.OnRefre
                 intent.putExtra("desc", newsInfo.getExcerpt());
 
                 Pair<View, String> pair = Pair.create((View) imageView, ViewCompat.getTransitionName(imageView));
-                ActivityOptionsCompat optionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(getActivity(), pair);
+                ActivityOptionsCompat optionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(Objects.requireNonNull(getActivity()), pair);
 
                 startActivity(intent, optionsCompat.toBundle());
             }

@@ -1,5 +1,6 @@
 package ph.aranzazushrine.aranzazuph.Adapters;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -23,8 +24,8 @@ import ph.aranzazushrine.aranzazuph.R;
 import ph.aranzazushrine.aranzazuph.Utils.DateUtils;
 
 public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.MyViewHolder> {
-    Context mContext;
-    List<News> news;
+    private Context mContext;
+    private List<News> news;
     private OnItemClickListener onItemClickListener;
 
     public NewsAdapter(Context mContext, List<News> news) {
@@ -39,9 +40,9 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.MyViewHolder> 
         return new MyViewHolder(view, onItemClickListener);
     }
 
+    @SuppressLint("CheckResult")
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder myViewHolder, int i) {
-        final MyViewHolder holder = myViewHolder;
         News model = news.get(i);
 
         RequestOptions requestOptions = new RequestOptions();
@@ -52,11 +53,11 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.MyViewHolder> 
                 .load(model.getMedia())
                 .apply(requestOptions)
                 .transition(DrawableTransitionOptions.withCrossFade())
-                .into(holder.newsImage);
+                .into(myViewHolder.newsImage);
 
-        holder.newsHeader.setText(model.getTitle());
-        holder.newsDesc.setText(model.getExcerpt());
-        holder.newsTime.setText(DateUtils.DateToTimeFormat(model.getDate()));
+        myViewHolder.newsHeader.setText(model.getTitle());
+        myViewHolder.newsDesc.setText(model.getExcerpt());
+        myViewHolder.newsTime.setText(DateUtils.DateToTimeFormat(model.getDate()));
     }
 
     @Override

@@ -3,4 +3,5 @@
     <color name="colorPrimary">#FFC107</color>
     <color name="colorPrimaryDark">#FFA000</color>
     <color name="colorAccent">#448AFF</color>
+    <!--TODO: GET ALL THE COLORS AND COMPILE IT HERE!-->
 </resources>

@@ -38,9 +38,7 @@ public class RegisterActivity extends AppCompatActivity {
     static int RequestCode = 1;
     Uri selectedImage;
     private EditText userName, userEmail, userPassword, userPasswordConfirm;
-    private Button btnRegister, btnPicture;
     private ImageView profilePicture;
-    private TextView loginText;
     private TextInputLayout nameInput, emailInput, passwordInput, confirmPasswordInput;
     private FirebaseAuth mAuth;
 
@@ -49,7 +47,7 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        loginText = findViewById(R.id.loginText);
+        TextView loginText = findViewById(R.id.loginText);
         loginText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -64,8 +62,8 @@ public class RegisterActivity extends AppCompatActivity {
         userEmail = findViewById(R.id.emailField);
         userPassword = findViewById(R.id.passwordField);
         userPasswordConfirm = findViewById(R.id.confirmPasswordField);
-        btnRegister = findViewById(R.id.loginButton);
-        btnPicture = findViewById(R.id.adsprofilePictureButton);
+        Button btnRegister = findViewById(R.id.loginButton);
+        Button btnPicture = findViewById(R.id.adsprofilePictureButton);
         profilePicture = findViewById(R.id.profilePicture);
 
         nameInput = findViewById(R.id.nameInputLayout);
@@ -87,6 +85,7 @@ public class RegisterActivity extends AppCompatActivity {
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //TODO: Fix this logic! Can cause APP CRASH.
                 final String name = userName.getText().toString();
                 final String email = userEmail.getText().toString();
                 final String password = userPassword.getText().toString();

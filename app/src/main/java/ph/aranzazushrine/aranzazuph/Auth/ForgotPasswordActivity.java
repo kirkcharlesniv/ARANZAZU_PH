@@ -17,7 +17,6 @@ import ph.aranzazushrine.aranzazuph.R;
 
 public class ForgotPasswordActivity extends AppCompatActivity {
     private EditText userEmail;
-    private Button forgotPasswordButton;
     private TextInputLayout emailInput;
     private FirebaseAuth mAuth;
 
@@ -27,7 +26,7 @@ public class ForgotPasswordActivity extends AppCompatActivity {
         setContentView(R.layout.activity_forgot_password);
 
         userEmail = findViewById(R.id.emailField);
-        forgotPasswordButton = findViewById(R.id.forgotPasswordButton);
+        Button forgotPasswordButton = findViewById(R.id.forgotPasswordButton);
         emailInput = findViewById(R.id.emailInputLayout);
         mAuth = FirebaseAuth.getInstance();
 

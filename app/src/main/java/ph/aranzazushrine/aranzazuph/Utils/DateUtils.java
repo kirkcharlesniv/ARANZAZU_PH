@@ -1,5 +1,6 @@
 package ph.aranzazushrine.aranzazuph.Utils;
 
+import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 
@@ -13,7 +14,7 @@ import java.util.Random;
 
 public class DateUtils {
 
-    public static ColorDrawable[] vibrantLightColorList =
+    private static ColorDrawable[] vibrantLightColorList =
             {
                     new ColorDrawable(Color.parseColor("#ffeead")),
                     new ColorDrawable(Color.parseColor("#93cfb3")),
@@ -49,7 +50,7 @@ public class DateUtils {
         String newDate;
         SimpleDateFormat dateFormat = new SimpleDateFormat("E, d MMM yyyy", new Locale(getCountry()));
         try {
-            Date date = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss").parse(oldstringDate);
+            @SuppressLint("SimpleDateFormat") Date date = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss").parse(oldstringDate);
             newDate = dateFormat.format(date);
         } catch (ParseException e) {
             e.printStackTrace();
@@ -59,7 +60,7 @@ public class DateUtils {
         return newDate;
     }
 
-    public static String getCountry() {
+    private static String getCountry() {
         Locale locale = Locale.getDefault();
         String country = String.valueOf(locale.getCountry());
         return country.toLowerCase();

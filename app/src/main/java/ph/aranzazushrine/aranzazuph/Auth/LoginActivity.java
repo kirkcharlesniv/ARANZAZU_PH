@@ -33,9 +33,6 @@ import ph.aranzazushrine.aranzazuph.R;
 
 public class LoginActivity extends AppCompatActivity {
     private EditText userEmail, userPassword;
-    private Button btnLogin, btnFacebook;
-    private TextView registerText, forgotPasswordText;
-
     private TextInputLayout emailInput, passwordInput;
 
     private FirebaseAuth mAuth;
@@ -48,7 +45,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        registerText = findViewById(R.id.registerText);
+        TextView registerText = findViewById(R.id.registerText);
         registerText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -57,7 +54,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        forgotPasswordText = findViewById(R.id.forgotPasswordButton);
+        TextView forgotPasswordText = findViewById(R.id.forgotPasswordButton);
         forgotPasswordText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -72,8 +69,8 @@ public class LoginActivity extends AppCompatActivity {
         emailInput = findViewById(R.id.emailInputLayout);
         passwordInput = findViewById(R.id.passwordInputLayout);
 
-        btnLogin = findViewById(R.id.loginButton);
-        btnFacebook = findViewById(R.id.facebookButton);
+        Button btnLogin = findViewById(R.id.loginButton);
+        Button btnFacebook = findViewById(R.id.facebookButton);
 
         mAuth = FirebaseAuth.getInstance();
 

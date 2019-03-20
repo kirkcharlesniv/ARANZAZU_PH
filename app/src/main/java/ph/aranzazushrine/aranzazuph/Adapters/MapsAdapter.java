@@ -1,5 +1,6 @@
 package ph.aranzazushrine.aranzazuph.Adapters;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -18,13 +19,13 @@ import com.bumptech.glide.request.RequestOptions;
 
 import java.util.List;
 
-import ph.aranzazushrine.aranzazuph.API.Maps;
+import ph.aranzazushrine.aranzazuph.Models.Maps;
 import ph.aranzazushrine.aranzazuph.R;
 
 public class MapsAdapter extends RecyclerView.Adapter<MapsAdapter.MyViewHolder> {
+    private Context mContext;
+    private List<Maps> mData;
     private static ClickListener clickListener;
-    Context mContext;
-    List<Maps> mData;
 
     public MapsAdapter(Context mContext, List<Maps> mData) {
         this.mContext = mContext;
@@ -40,11 +41,11 @@ public class MapsAdapter extends RecyclerView.Adapter<MapsAdapter.MyViewHolder> 
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View v;
         v = LayoutInflater.from(mContext).inflate(R.layout.item_maps, viewGroup, false);
-        MyViewHolder viewHolder = new MyViewHolder(v);
 
-        return viewHolder;
+        return new MyViewHolder(v);
     }
 
+    @SuppressLint("CheckResult")
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder myViewHolder, int i) {
         RequestOptions requestOptions = new RequestOptions();

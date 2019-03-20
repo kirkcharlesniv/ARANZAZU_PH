@@ -2,6 +2,7 @@ package ph.aranzazushrine.aranzazuph.Fragments;
 
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -15,8 +16,8 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.List;
 
-import ph.aranzazushrine.aranzazuph.API.Maps;
 import ph.aranzazushrine.aranzazuph.Adapters.MapsAdapter;
+import ph.aranzazushrine.aranzazuph.Models.Maps;
 import ph.aranzazushrine.aranzazuph.R;
 
 
@@ -25,9 +26,6 @@ import ph.aranzazushrine.aranzazuph.R;
  */
 public class EventsFragment extends Fragment {
     View v;
-    RecyclerView.LayoutManager layoutManager;
-    private RecyclerView recyclerView;
-    private MapsAdapter mapsAdapter;
     private List<Maps> listMaps;
 
     public EventsFragment() {
@@ -36,11 +34,11 @@ public class EventsFragment extends Fragment {
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         v = inflater.inflate(R.layout.fragment_events, container, false);
-        recyclerView = v.findViewById(R.id.recyclerView);
+        RecyclerView recyclerView = v.findViewById(R.id.recyclerView);
         MapsAdapter mapsAdapter = new MapsAdapter(getContext(), listMaps);
         mapsAdapter.setOnItemClickListener(new MapsAdapter.ClickListener() {
             @Override

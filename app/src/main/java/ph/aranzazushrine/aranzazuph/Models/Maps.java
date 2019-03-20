@@ -1,4 +1,4 @@
-package ph.aranzazushrine.aranzazuph.API;
+package ph.aranzazushrine.aranzazuph.Models;
 
 public class Maps {
     private String mURL, mTitle, mDesc;

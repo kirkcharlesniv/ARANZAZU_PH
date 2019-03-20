@@ -18,14 +18,9 @@ import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 import com.bumptech.glide.request.RequestOptions;
 
 public class NewsDetailActivity extends AppCompatActivity implements AppBarLayout.OnOffsetChangedListener {
-    private ImageView detailImage;
-    private TextView detailHeader, detailDesc, detailTime;
-    private String mID, mURL, mImage, mHeader, mDesc, mTime;
-    private WebView webView;
 
     private Toolbar toolbar;
     private boolean isHideToolbarView = false;
-    private AppBarLayout appBarLayout;
 
 
     @Override
@@ -33,26 +28,26 @@ public class NewsDetailActivity extends AppCompatActivity implements AppBarLayou
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news_detail);
 
-        detailImage = findViewById(R.id.detailImage);
-        detailHeader = findViewById(R.id.detailHeader);
-        detailDesc = findViewById(R.id.detailDesc);
-        detailTime = findViewById(R.id.detailTime);
+        ImageView detailImage = findViewById(R.id.detailImage);
+        TextView detailHeader = findViewById(R.id.detailHeader);
+        TextView detailDesc = findViewById(R.id.detailDesc);
+        TextView detailTime = findViewById(R.id.detailTime);
 
         final CollapsingToolbarLayout collapsingToolbarLayout = findViewById(R.id.collapsing_toolbar);
         collapsingToolbarLayout.setTitle("");
 
-        appBarLayout = findViewById(R.id.appbar);
+        AppBarLayout appBarLayout = findViewById(R.id.appbar);
         appBarLayout.addOnOffsetChangedListener(this);
 
 
         Intent intent = getIntent();
 
-        mID = intent.getStringExtra("ID");
-        mURL = intent.getStringExtra("url");
-        mImage = intent.getStringExtra("image");
-        mHeader = intent.getStringExtra("header");
-        mDesc = intent.getStringExtra("desc");
-        mTime = intent.getStringExtra("time");
+        String mID = intent.getStringExtra("ID");
+        String mURL = intent.getStringExtra("url");
+        String mImage = intent.getStringExtra("image");
+        String mHeader = intent.getStringExtra("header");
+        String mDesc = intent.getStringExtra("desc");
+        String mTime = intent.getStringExtra("time");
 
         RequestOptions requestOptions = new RequestOptions();
 
@@ -71,7 +66,7 @@ public class NewsDetailActivity extends AppCompatActivity implements AppBarLayou
 
     @SuppressLint("SetJavaScriptEnabled")
     private void initWebView(String url) {
-        webView = findViewById(R.id.webView);
+        WebView webView = findViewById(R.id.webView);
         webView.getSettings().setLoadsImagesAutomatically(true);
         webView.getSettings().setJavaScriptEnabled(true);
         webView.getSettings().setDomStorageEnabled(true);
