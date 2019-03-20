@@ -1,4 +1,4 @@
-package ph.aranzazushrine.aranzazuph;
+package ph.aranzazushrine.aranzazuph.Utils;
 
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -11,7 +11,7 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.Random;
 
-public class Utils {
+public class DateUtils {
 
     public static ColorDrawable[] vibrantLightColorList =
             {

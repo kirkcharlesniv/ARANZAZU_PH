@@ -1,4 +1,4 @@
-package ph.aranzazushrine.aranzazuph;
+package ph.aranzazushrine.aranzazuph.Auth;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -27,6 +27,9 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 import java.util.Arrays;
+
+import ph.aranzazushrine.aranzazuph.HomeActivity;
+import ph.aranzazushrine.aranzazuph.R;
 
 public class LoginActivity extends AppCompatActivity {
     private EditText userEmail, userPassword;

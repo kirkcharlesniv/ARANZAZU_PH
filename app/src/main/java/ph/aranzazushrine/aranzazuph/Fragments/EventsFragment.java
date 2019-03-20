@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ph.aranzazushrine.aranzazuph.API.Maps;
-import ph.aranzazushrine.aranzazuph.BibleAdapter;
+import ph.aranzazushrine.aranzazuph.Adapters.MapsAdapter;
 import ph.aranzazushrine.aranzazuph.R;
 
 
@@ -27,7 +27,7 @@ public class EventsFragment extends Fragment {
     View v;
     RecyclerView.LayoutManager layoutManager;
     private RecyclerView recyclerView;
-    private BibleAdapter bibleAdapter;
+    private MapsAdapter mapsAdapter;
     private List<Maps> listMaps;
 
     public EventsFragment() {
@@ -41,8 +41,8 @@ public class EventsFragment extends Fragment {
         // Inflate the layout for this fragment
         v = inflater.inflate(R.layout.fragment_events, container, false);
         recyclerView = v.findViewById(R.id.recyclerView);
-        BibleAdapter bibleAdapter = new BibleAdapter(getContext(), listMaps);
-        bibleAdapter.setOnItemClickListener(new BibleAdapter.ClickListener() {
+        MapsAdapter mapsAdapter = new MapsAdapter(getContext(), listMaps);
+        mapsAdapter.setOnItemClickListener(new MapsAdapter.ClickListener() {
             @Override
             public void onItemClick(int position, View v) {
                 Maps mapInfo = listMaps.get(position);
@@ -52,7 +52,7 @@ public class EventsFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setNestedScrollingEnabled(false);
-        recyclerView.setAdapter(bibleAdapter);
+        recyclerView.setAdapter(mapsAdapter);
         return v;
     }
 

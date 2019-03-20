@@ -1,4 +1,4 @@
-package ph.aranzazushrine.aranzazuph;
+package ph.aranzazushrine.aranzazuph.Auth;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -12,6 +12,8 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+
+import ph.aranzazushrine.aranzazuph.R;
 
 public class ForgotPasswordActivity extends AppCompatActivity {
     private EditText userEmail;

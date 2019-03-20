@@ -15,7 +15,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".NewsDetailActivity"></activity>
         <activity android:name=".HomeActivity" />
-        <activity android:name=".ForgotPasswordActivity" />
+        <activity android:name=".Auth.ForgotPasswordActivity" />
 
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
@@ -25,8 +25,8 @@
             android:name="com.facebook.FacebookActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:label="@string/app_name" />
-        <activity android:name=".RegisterActivity" />
-        <activity android:name=".LoginActivity">
+        <activity android:name=".Auth.RegisterActivity" />
+        <activity android:name=".Auth.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

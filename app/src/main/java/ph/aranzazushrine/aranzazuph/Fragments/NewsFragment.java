@@ -24,11 +24,11 @@ import java.util.List;
 
 import ph.aranzazushrine.aranzazuph.API.ApiClient;
 import ph.aranzazushrine.aranzazuph.API.ApiInterface;
-import ph.aranzazushrine.aranzazuph.Adapter;
+import ph.aranzazushrine.aranzazuph.Adapters.NewsAdapter;
 import ph.aranzazushrine.aranzazuph.Models.News;
 import ph.aranzazushrine.aranzazuph.NewsDetailActivity;
 import ph.aranzazushrine.aranzazuph.R;
-import ph.aranzazushrine.aranzazuph.Utils;
+import ph.aranzazushrine.aranzazuph.Utils.DateUtils;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -42,7 +42,7 @@ public class NewsFragment extends Fragment implements SwipeRefreshLayout.OnRefre
     RecyclerView.LayoutManager layoutManager;
     private RecyclerView recyclerView;
     private List<News> news = new ArrayList<>();
-    private Adapter adapter;
+    private NewsAdapter newsAdapter;
     private SwipeRefreshLayout swipeRefreshLayout;
 
 
@@ -58,11 +58,11 @@ public class NewsFragment extends Fragment implements SwipeRefreshLayout.OnRefre
         // Inflate the layout for this fragment
         v = inflater.inflate(R.layout.fragment_news, container, false);
         recyclerView = v.findViewById(R.id.recyclerView);
-        Adapter adapter = new Adapter(getContext(), news);
+        NewsAdapter newsAdapter = new NewsAdapter(getContext(), news);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setNestedScrollingEnabled(false);
-        recyclerView.setAdapter(adapter);
+        recyclerView.setAdapter(newsAdapter);
 
         swipeRefreshLayout = v.findViewById(R.id.swipe_refresh_layout);
         swipeRefreshLayout.setOnRefreshListener(this);
@@ -96,9 +96,9 @@ public class NewsFragment extends Fragment implements SwipeRefreshLayout.OnRefre
                     }
 
                     news = response.body();
-                    adapter = new Adapter(getContext(), news);
-                    recyclerView.setAdapter(adapter);
-                    adapter.notifyDataSetChanged();
+                    newsAdapter = new NewsAdapter(getContext(), news);
+                    recyclerView.setAdapter(newsAdapter);
+                    newsAdapter.notifyDataSetChanged();
                     initListener();
                     swipeRefreshLayout.setRefreshing(false);
                 } else {
@@ -115,7 +115,7 @@ public class NewsFragment extends Fragment implements SwipeRefreshLayout.OnRefre
     }
 
     private void initListener() {
-        adapter.setOnItemClickListener(new Adapter.OnItemClickListener() {
+        newsAdapter.setOnItemClickListener(new NewsAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int i) {
                 ImageView imageView = view.findViewById(R.id.newsImage);
@@ -126,7 +126,7 @@ public class NewsFragment extends Fragment implements SwipeRefreshLayout.OnRefre
                 intent.putExtra("url", "http://aranzazushrine.ph/?p=" + newsInfo.getId());
                 intent.putExtra("header", newsInfo.getTitle());
                 intent.putExtra("image", newsInfo.getMedia());
-                intent.putExtra("time", Utils.DateToTimeFormat(newsInfo.getDate()));
+                intent.putExtra("time", DateUtils.DateToTimeFormat(newsInfo.getDate()));
                 intent.putExtra("desc", newsInfo.getExcerpt());
 
                 Pair<View, String> pair = Pair.create((View) imageView, ViewCompat.getTransitionName(imageView));

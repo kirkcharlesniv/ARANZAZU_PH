@@ -1,4 +1,4 @@
-package ph.aranzazushrine.aranzazuph;
+package ph.aranzazushrine.aranzazuph.Adapters;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -19,13 +19,15 @@ import com.bumptech.glide.request.RequestOptions;
 import java.util.List;
 
 import ph.aranzazushrine.aranzazuph.Models.News;
+import ph.aranzazushrine.aranzazuph.R;
+import ph.aranzazushrine.aranzazuph.Utils.DateUtils;
 
-public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
+public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.MyViewHolder> {
     Context mContext;
     List<News> news;
     private OnItemClickListener onItemClickListener;
 
-    public Adapter(Context mContext, List<News> news) {
+    public NewsAdapter(Context mContext, List<News> news) {
         this.mContext = mContext;
         this.news = news;
     }
@@ -54,7 +56,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
 
         holder.newsHeader.setText(model.getTitle());
         holder.newsDesc.setText(model.getExcerpt());
-        holder.newsTime.setText(Utils.DateToTimeFormat(model.getDate()));
+        holder.newsTime.setText(DateUtils.DateToTimeFormat(model.getDate()));
     }
 
     @Override

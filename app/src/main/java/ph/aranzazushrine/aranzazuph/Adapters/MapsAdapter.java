@@ -1,4 +1,4 @@
-package ph.aranzazushrine.aranzazuph;
+package ph.aranzazushrine.aranzazuph.Adapters;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -19,19 +19,20 @@ import com.bumptech.glide.request.RequestOptions;
 import java.util.List;
 
 import ph.aranzazushrine.aranzazuph.API.Maps;
+import ph.aranzazushrine.aranzazuph.R;
 
-public class BibleAdapter extends RecyclerView.Adapter<BibleAdapter.MyViewHolder> {
+public class MapsAdapter extends RecyclerView.Adapter<MapsAdapter.MyViewHolder> {
     private static ClickListener clickListener;
     Context mContext;
     List<Maps> mData;
 
-    public BibleAdapter(Context mContext, List<Maps> mData) {
+    public MapsAdapter(Context mContext, List<Maps> mData) {
         this.mContext = mContext;
         this.mData = mData;
     }
 
     public void setOnItemClickListener(ClickListener clickListener) {
-        BibleAdapter.clickListener = clickListener;
+        MapsAdapter.clickListener = clickListener;
     }
 
     @NonNull

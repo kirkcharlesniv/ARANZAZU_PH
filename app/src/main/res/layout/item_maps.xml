@@ -46,7 +46,6 @@
         tools:text="Lorem Ipsum Dolor. Is forum dolor et Quebec." />
 
     <TextView
-        android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"

@@ -1,4 +1,4 @@
-package ph.aranzazushrine.aranzazuph;
+package ph.aranzazushrine.aranzazuph.Auth;
 
 import android.Manifest;
 import android.content.Intent;
@@ -29,6 +29,9 @@ import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+
+import ph.aranzazushrine.aranzazuph.HomeActivity;
+import ph.aranzazushrine.aranzazuph.R;
 
 public class RegisterActivity extends AppCompatActivity {
     static int PReqCode = 1;
