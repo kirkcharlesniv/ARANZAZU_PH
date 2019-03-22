@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#fff"
+    android:background="@color/white"
     android:fitsSystemWindows="true"
     tools:context=".NewsDetailActivity">
 
@@ -51,7 +51,7 @@
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#fff"
+        android:background="@color/white"
         android:fitsSystemWindows="true"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
@@ -78,7 +78,7 @@
                         android:layout_marginTop="8dp"
                         android:layout_marginEnd="16dp"
                         android:fontFamily="sans-serif-medium"
-                        android:textColor="#000"
+                        android:textColor="@color/black"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toStartOf="parent"
@@ -94,7 +94,6 @@
                         android:layout_alignEnd="@+id/detailHeader"
                         android:layout_marginEnd="8dp"
                         android:fontFamily="sans-serif-light"
-                        android:textColor="#737474"
                         android:textSize="10sp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.0"
@@ -108,7 +107,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="9dp"
                         android:fontFamily="sans-serif-thin"
-                        android:textColor="#737474"
                         android:textSize="8sp"
                         app:layout_constraintStart_toStartOf="@+id/detailDesc"
                         app:layout_constraintTop_toBottomOf="@+id/detailDesc"

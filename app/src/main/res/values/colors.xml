@@ -3,5 +3,11 @@
     <color name="colorPrimary">#FFC107</color>
     <color name="colorPrimaryDark">#FFA000</color>
     <color name="colorAccent">#448AFF</color>
+    <color name="white">#fff</color>
+    <color name="grayText">#3B3B3B</color>
+    <color name="gradientStart">#F92B7F</color>
+    <color name="gradientEnd">#F58524</color>
+    <color name="textSignature">#F75356</color>
+    <color name="black">#000</color>
     <!--TODO: GET ALL THE COLORS AND COMPILE IT HERE!-->
 </resources>

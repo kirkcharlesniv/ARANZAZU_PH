@@ -24,14 +24,14 @@
         android:id="@+id/view"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
-        android:background="#616161"
+        android:background="@color/grayText"
         app:layout_constraintBottom_toTopOf="@+id/bottom_navigation_view" />
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/bottom_navigation_view"
         android:layout_width="match_parent"
         android:layout_height="56dp"
-        android:background="#fff"
+        android:background="@color/white"
         app:labelVisibilityMode="unlabeled"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

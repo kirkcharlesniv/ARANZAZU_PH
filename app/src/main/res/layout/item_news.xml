@@ -12,7 +12,8 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="15dp"
         android:layout_marginBottom="5dp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:ignore="UselessParent">
 
         <ImageView
             android:id="@+id/newsImage"
@@ -21,7 +22,8 @@
             android:layout_height="144dp"
             android:layout_gravity="center_horizontal"
             android:scaleType="centerCrop"
-            tools:background="#000"
+            android:contentDescription="@string/news_image"
+            tools:background="@color/black"
             tools:layout_editor_absoluteX="45dp" />
 
         <TextView
@@ -31,7 +33,7 @@
             android:layout_marginTop="9dp"
             android:fontFamily="sans-serif-medium"
             tools:text="Shrove Tuesday Burning of the Palms"
-            android:textColor="#000"
+            android:textColor="@color/black"
             tools:layout_editor_absoluteX="45dp"
             tools:layout_editor_absoluteY="151dp" />
 
@@ -41,7 +43,6 @@
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-light"
             tools:text="As these palm branches are changed to ash, change us, Lord; make us new. Amen."
-            android:textColor="#737474"
             android:textSize="10sp"
             tools:layout_editor_absoluteX="45dp"
             tools:layout_editor_absoluteY="170dp" />
@@ -53,7 +54,6 @@
             android:layout_marginTop="9dp"
             android:fontFamily="sans-serif-thin"
             tools:text="9 hours ago"
-            android:textColor="#737474"
             android:textSize="8sp"
             tools:layout_editor_absoluteX="45dp"
             tools:layout_editor_absoluteY="202dp" />

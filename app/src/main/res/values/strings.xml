@@ -19,4 +19,11 @@
     <string name="forgot_password_icon">Forgot Password Icon</string>
     <string name="chapelimage">Chapel\'s Image View</string>
     <string name="news_header_image">News Header Image</string>
+    <string name="news_image">News Image</string>
+    <string name="viva_aranzazu">Viva Aranzazu</string>
+    <string name="ph">PH</string>
+    <string name="map">Map</string>
+    <string name="profile_picture_description">Your Profile Picture</string>
+    <string name="search_button_description">Search Button</string>
+    <string name="news">News</string>
 </resources>
