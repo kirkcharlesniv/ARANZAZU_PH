@@ -3,7 +3,6 @@ package ph.aranzazushrine.aranzazuph;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -11,18 +10,19 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toolbar;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
 import com.bumptech.glide.request.RequestOptions;
 
-public class NewsDetailActivity extends AppCompatActivity implements AppBarLayout.OnOffsetChangedListener {
+import ph.aranzazushrine.aranzazuph.API.ApiClient;
+import ph.aranzazushrine.aranzazuph.API.ApiInterface;
+import ph.aranzazushrine.aranzazuph.Models.Author;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
-    private Toolbar toolbar;
-    private boolean isHideToolbarView = false;
-
-
+public class NewsDetailActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,24 +30,42 @@ public class NewsDetailActivity extends AppCompatActivity implements AppBarLayou
 
         ImageView detailImage = findViewById(R.id.detailImage);
         TextView detailHeader = findViewById(R.id.detailHeader);
-        TextView detailDesc = findViewById(R.id.detailDesc);
-        TextView detailTime = findViewById(R.id.detailTime);
+        TextView detailPublished = findViewById(R.id.detailPublished);
+
+
 
         final CollapsingToolbarLayout collapsingToolbarLayout = findViewById(R.id.collapsing_toolbar);
         collapsingToolbarLayout.setTitle("");
 
-        AppBarLayout appBarLayout = findViewById(R.id.appbar);
-        appBarLayout.addOnOffsetChangedListener(this);
-
 
         Intent intent = getIntent();
 
-        String mID = intent.getStringExtra("ID");
         String mURL = intent.getStringExtra("url");
         String mImage = intent.getStringExtra("image");
         String mHeader = intent.getStringExtra("header");
-        String mDesc = intent.getStringExtra("desc");
-        String mTime = intent.getStringExtra("time");
+        String mPublished = intent.getStringExtra("published");
+        String mAuthor = intent.getStringExtra("author");
+        ApiInterface apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
+        final Call<Author> authorCall = apiInterface.getAuthor(mAuthor);
+        authorCall.enqueue(new Callback<Author>() {
+            @Override
+            public void onResponse(Call<Author> call, Response<Author> response) {
+                Author authorResponse = response.body();
+
+                ImageView authorImage = findViewById(R.id.authorImage2);
+                Glide.with(getBaseContext())
+                        .load(String.valueOf(authorResponse.getPhoto()))
+                        .into(authorImage);
+
+                TextView authorName = findViewById(R.id.authorName);
+                authorName.setText(authorResponse.getName());
+            }
+
+            @Override
+            public void onFailure(Call<Author> call, Throwable t) {
+
+            }
+        });
 
         RequestOptions requestOptions = new RequestOptions();
 
@@ -58,8 +76,7 @@ public class NewsDetailActivity extends AppCompatActivity implements AppBarLayou
                 .into(detailImage);
 
         detailHeader.setText(mHeader);
-        detailDesc.setText(mDesc);
-        detailTime.setText(mTime);
+        detailPublished.setText(mPublished);
 
         initWebView(mURL);
     }
@@ -77,18 +94,6 @@ public class NewsDetailActivity extends AppCompatActivity implements AppBarLayou
         webView.setWebViewClient(new WebViewClient());
         webView.loadUrl(url);
 
-    }
-
-    @Override
-    public void onOffsetChanged(AppBarLayout appBarLayout, int i) {
-        int maxScroll = appBarLayout.getTotalScrollRange();
-        float percentage = (float) Math.abs(i) / (float) maxScroll;
-
-        if (percentage == 1f && isHideToolbarView) {
-            isHideToolbarView = !isHideToolbarView;
-        } else if (percentage < 1f && isHideToolbarView) {
-            isHideToolbarView = !isHideToolbarView;
-        }
     }
 
     @Override

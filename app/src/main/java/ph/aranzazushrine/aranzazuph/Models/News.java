@@ -22,7 +22,7 @@ public class News {
     private String excerpt;
     @SerializedName("author")
     @Expose
-    private Author author;
+    private int author;
 
     public int getId() {
         return id;
@@ -64,11 +64,11 @@ public class News {
         this.excerpt = excerpt;
     }
 
-    public Author getAuthor() {
+    public int getAuthor() {
         return author;
     }
 
-    public void setAuthor(Author author) {
+    public void setAuthor(int author) {
         this.author = author;
     }
 }

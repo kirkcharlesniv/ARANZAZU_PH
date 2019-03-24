@@ -18,6 +18,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -30,10 +31,11 @@ import ph.aranzazushrine.aranzazuph.Adapters.NewsAdapter;
 import ph.aranzazushrine.aranzazuph.Models.News;
 import ph.aranzazushrine.aranzazuph.NewsDetailActivity;
 import ph.aranzazushrine.aranzazuph.R;
-import ph.aranzazushrine.aranzazuph.Utils.DateUtils;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+
+import static ph.aranzazushrine.aranzazuph.Utils.DateUtils.DateFormat;
 
 
 /**
@@ -121,18 +123,19 @@ public class NewsFragment extends Fragment implements SwipeRefreshLayout.OnRefre
             @Override
             public void onItemClick(View view, int i) {
                 ImageView imageView = view.findViewById(R.id.newsImage);
+                TextView headerText = view.findViewById(R.id.newsHeader);
                 Intent intent = new Intent(getContext(), NewsDetailActivity.class);
 
                 News newsInfo = news.get(i);
-                intent.putExtra("ID", newsInfo.getId());
                 intent.putExtra("url", "http://aranzazushrine.ph/?p=" + newsInfo.getId());
-                intent.putExtra("header", newsInfo.getTitle());
                 intent.putExtra("image", newsInfo.getMedia());
-                intent.putExtra("time", DateUtils.DateToTimeFormat(newsInfo.getDate()));
-                intent.putExtra("desc", newsInfo.getExcerpt());
+                intent.putExtra("header", newsInfo.getTitle());
+                intent.putExtra("published", DateFormat(newsInfo.getDate()));
+                intent.putExtra("author", String.valueOf(newsInfo.getAuthor()));
 
                 Pair<View, String> pair = Pair.create((View) imageView, ViewCompat.getTransitionName(imageView));
-                ActivityOptionsCompat optionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(Objects.requireNonNull(getActivity()), pair);
+                Pair<View, String> headerPair = Pair.create((View) headerText, ViewCompat.getTransitionName(headerText));
+                ActivityOptionsCompat optionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(Objects.requireNonNull(getActivity()), pair, headerPair);
 
                 startActivity(intent, optionsCompat.toBundle());
             }

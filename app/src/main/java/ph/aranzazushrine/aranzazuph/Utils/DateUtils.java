@@ -48,7 +48,7 @@ public class DateUtils {
 
     public static String DateFormat(String oldstringDate) {
         String newDate;
-        SimpleDateFormat dateFormat = new SimpleDateFormat("E, d MMM yyyy", new Locale(getCountry()));
+        SimpleDateFormat dateFormat = new SimpleDateFormat("MMMM d, yyyy", new Locale(getCountry()));
         try {
             @SuppressLint("SimpleDateFormat") Date date = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss").parse(oldstringDate);
             newDate = dateFormat.format(date);

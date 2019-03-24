@@ -11,7 +11,7 @@
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appbar"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
+        android:layout_height="270dp"
         android:fitsSystemWindows="true">
 
         <android.support.design.widget.CollapsingToolbarLayout
@@ -19,15 +19,14 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fitsSystemWindows="true"
-            app:contentScrim="?attr/colorPrimary"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
             app:titleEnabled="false">
 
             <ImageView
-                android:contentDescription="@string/news_header_image"
                 android:id="@+id/detailImage"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:contentDescription="@string/news_header_image"
                 android:fitsSystemWindows="true"
                 android:scaleType="centerCrop"
                 android:transitionName="newsImage"
@@ -60,58 +59,93 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-                <android.support.constraint.ConstraintLayout
-                    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-                    android:layout_width="match_parent"
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp"
+                android:layout_marginBottom="30dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingBottom="10dp"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                <TextView
+                    android:id="@+id/detailHeader"
+                    android:layout_width="0dp"
+                    android:layout_height="19dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:textColor="@color/black"
+                    android:transitionName="newsHeader"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Shrove Tuesday Burning of the Palms" />
+
+                <View
+                    android:id="@+id/view"
+                    android:layout_width="34dp"
+                    android:layout_height="3dp"
+                    android:layout_marginTop="26dp"
+                    android:background="@color/gradientStart"
+                    app:layout_constraintStart_toStartOf="@+id/detailHeader"
+                    app:layout_constraintTop_toTopOf="@+id/detailHeader" />
+
+                <!--<com.facebook.shimmer.ShimmerFrameLayout-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="0dp"-->
+                <!--app:layout_constraintBottom_toBottomOf="@+id/authorImage"-->
+                <!--app:layout_constraintEnd_toEndOf="@+id/authorName"-->
+                <!--app:layout_constraintStart_toStartOf="@+id/authorImage"-->
+                <!--app:layout_constraintTop_toTopOf="@+id/authorName">-->
+                <!--<include layout="@layout/author"/>-->
+                <!--</com.facebook.shimmer.ShimmerFrameLayout>-->
+                <com.mikhaellopez.circularimageview.CircularImageView
+                    android:id="@+id/authorImage2"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="9dp"
+                    android:scaleType="centerCrop"
+                    app:civ_border="false"
+                    app:layout_constraintStart_toStartOf="@+id/detailHeader"
+                    app:layout_constraintTop_toBottomOf="@+id/view" />
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginBottom="30dp"
-                    android:paddingLeft="16dp"
-                    android:paddingRight="16dp"
-                    android:paddingBottom="10dp">
+                    android:layout_marginStart="8dp"
+                    android:text="By "
+                    android:textSize="9sp"
+                    app:layout_constraintStart_toEndOf="@+id/authorImage2"
+                    app:layout_constraintTop_toTopOf="@+id/authorImage2" />
 
-                    <TextView
-                        android:id="@+id/detailHeader"
-                        android:layout_width="0dp"
-                        android:layout_height="19dp"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginEnd="16dp"
-                        android:fontFamily="sans-serif-medium"
-                        android:textColor="@color/black"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.0"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        tools:text="Shrove Tuesday Burning of the Palms" />
+                <TextView
+                    android:id="@+id/authorName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="9sp"
+                    app:layout_constraintStart_toEndOf="@+id/textView2"
+                    app:layout_constraintTop_toTopOf="@+id/textView2"
+                    tools:text="Gerald Tecson" />
 
-                    <TextView
-                        android:id="@+id/detailDesc"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/detailHeader"
-                        android:layout_alignStart="@+id/detailHeader"
-                        android:layout_alignEnd="@+id/detailHeader"
-                        android:layout_marginEnd="8dp"
-                        android:fontFamily="sans-serif-light"
-                        android:textSize="10sp"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.0"
-                        app:layout_constraintStart_toStartOf="@+id/detailHeader"
-                        app:layout_constraintTop_toBottomOf="@+id/detailHeader"
-                        tools:text="As these palm branches are changed to ash, change us, Lord; make us new. Amen." />
+                <TextView
+                    android:id="@+id/detailPublished"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:fontFamily="sans-serif-light"
+                    android:textSize="7sp"
+                    app:layout_constraintStart_toStartOf="@+id/textView2"
+                    app:layout_constraintTop_toBottomOf="@+id/authorName"
+                    tools:text="March 06, 2019" />
 
-                    <TextView
-                        android:id="@+id/detailTime"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="9dp"
-                        android:fontFamily="sans-serif-thin"
-                        android:textSize="8sp"
-                        app:layout_constraintStart_toStartOf="@+id/detailDesc"
-                        app:layout_constraintTop_toBottomOf="@+id/detailDesc"
-                        tools:text="9 hours ago" />
-                </android.support.constraint.ConstraintLayout>
+
+            </android.support.constraint.ConstraintLayout>
 
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"

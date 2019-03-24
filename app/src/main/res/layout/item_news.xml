@@ -27,6 +27,7 @@
             tools:layout_editor_absoluteX="45dp" />
 
         <TextView
+            android:transitionName="newsHeader"
             android:id="@+id/newsHeader"
             android:layout_width="321dp"
             android:layout_height="wrap_content"
