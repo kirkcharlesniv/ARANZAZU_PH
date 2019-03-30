@@ -9,5 +9,6 @@
     <color name="gradientEnd">#F58524</color>
     <color name="textSignature">#F75356</color>
     <color name="black">#000</color>
+    <color name="colorShimmer">#bdbdbd</color>
     <!--TODO: GET ALL THE COLORS AND COMPILE IT HERE!-->
 </resources>

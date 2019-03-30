@@ -73,8 +73,8 @@
                     android:id="@+id/detailHeader"
                     android:layout_width="0dp"
                     android:layout_height="19dp"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="22dp"
+                    android:layout_marginEnd="22dp"
                     android:fontFamily="sans-serif-medium"
                     android:textColor="@color/black"
                     android:transitionName="newsHeader"
@@ -93,15 +93,19 @@
                     app:layout_constraintStart_toStartOf="@+id/detailHeader"
                     app:layout_constraintTop_toTopOf="@+id/detailHeader" />
 
-                <!--<com.facebook.shimmer.ShimmerFrameLayout-->
-                <!--android:layout_width="0dp"-->
-                <!--android:layout_height="0dp"-->
-                <!--app:layout_constraintBottom_toBottomOf="@+id/authorImage"-->
-                <!--app:layout_constraintEnd_toEndOf="@+id/authorName"-->
-                <!--app:layout_constraintStart_toStartOf="@+id/authorImage"-->
-                <!--app:layout_constraintTop_toTopOf="@+id/authorName">-->
-                <!--<include layout="@layout/author"/>-->
-                <!--</com.facebook.shimmer.ShimmerFrameLayout>-->
+                <com.facebook.shimmer.ShimmerFrameLayout
+                    android:id="@+id/author_shimmer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="@+id/authorImage2"
+                    app:layout_constraintTop_toTopOf="@+id/authorName"
+                    app:shimmer_duration="800">
+
+                    <include layout="@layout/shimmer_author" />
+                </com.facebook.shimmer.ShimmerFrameLayout>
+
+
                 <com.mikhaellopez.circularimageview.CircularImageView
                     android:id="@+id/authorImage2"
                     android:layout_width="24dp"
@@ -114,12 +118,13 @@
                     app:layout_constraintTop_toBottomOf="@+id/view" />
 
                 <TextView
-                    android:id="@+id/textView2"
+                    android:id="@+id/byText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:text="By "
                     android:textSize="9sp"
+                    android:visibility="gone"
                     app:layout_constraintStart_toEndOf="@+id/authorImage2"
                     app:layout_constraintTop_toTopOf="@+id/authorImage2" />
 
@@ -129,8 +134,8 @@
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"
                     android:textSize="9sp"
-                    app:layout_constraintStart_toEndOf="@+id/textView2"
-                    app:layout_constraintTop_toTopOf="@+id/textView2"
+                    app:layout_constraintStart_toEndOf="@+id/byText"
+                    app:layout_constraintTop_toTopOf="@+id/byText"
                     tools:text="Gerald Tecson" />
 
                 <TextView
@@ -140,7 +145,7 @@
                     android:layout_marginTop="2dp"
                     android:fontFamily="sans-serif-light"
                     android:textSize="7sp"
-                    app:layout_constraintStart_toStartOf="@+id/textView2"
+                    app:layout_constraintStart_toStartOf="@+id/byText"
                     app:layout_constraintTop_toBottomOf="@+id/authorName"
                     tools:text="March 06, 2019" />
 
@@ -155,17 +160,21 @@
                 app:cardCornerRadius="0dp"
                 app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
+                <com.facebook.shimmer.ShimmerFrameLayout
+                    android:id="@+id/news_shimmer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="@+id/webView"
+                    app:layout_constraintTop_toTopOf="@+id/webView"
+                    app:shimmer_duration="800">
+
+                    <include layout="@layout/shimmer_news" />
+                </com.facebook.shimmer.ShimmerFrameLayout>
+
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
-
-                    <ProgressBar
-                        android:id="@+id/progress_bar"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="50dp"
-                        android:layout_marginBottom="70dp"
-                        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
                     <WebView
                         android:id="@+id/webView"
