@@ -21,6 +21,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.facebook.shimmer.ShimmerFrameLayout;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -48,6 +50,7 @@ public class NewsFragment extends Fragment implements SwipeRefreshLayout.OnRefre
     private List<News> news = new ArrayList<>();
     private NewsAdapter newsAdapter;
     private SwipeRefreshLayout swipeRefreshLayout;
+    private ShimmerFrameLayout dashboardShimmer;
 
 
     public NewsFragment() {
@@ -61,7 +64,14 @@ public class NewsFragment extends Fragment implements SwipeRefreshLayout.OnRefre
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         v = inflater.inflate(R.layout.fragment_news, container, false);
+
+        dashboardShimmer = v.findViewById(R.id.dashboard_shimmer);
+        dashboardShimmer.setVisibility(View.VISIBLE);
+        dashboardShimmer.startShimmer();
+
         recyclerView = v.findViewById(R.id.recyclerView);
+        recyclerView.setVisibility(View.GONE);
+
         NewsAdapter newsAdapter = new NewsAdapter(getContext(), news);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
@@ -105,6 +115,10 @@ public class NewsFragment extends Fragment implements SwipeRefreshLayout.OnRefre
                     newsAdapter.notifyDataSetChanged();
                     initListener();
                     swipeRefreshLayout.setRefreshing(false);
+
+                    dashboardShimmer.setVisibility(View.GONE);
+                    dashboardShimmer.stopShimmer();
+                    recyclerView.setVisibility(View.VISIBLE);
                 } else {
                     Toast.makeText(getContext(), "No Result", Toast.LENGTH_SHORT).show();
                     swipeRefreshLayout.setRefreshing(false);
