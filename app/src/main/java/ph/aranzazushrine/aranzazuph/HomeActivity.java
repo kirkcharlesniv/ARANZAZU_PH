@@ -12,7 +12,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 import ph.aranzazushrine.aranzazuph.Auth.LoginActivity;
 import ph.aranzazushrine.aranzazuph.Fragments.BibleFragment;
-import ph.aranzazushrine.aranzazuph.Fragments.EventsFragment;
+import ph.aranzazushrine.aranzazuph.Fragments.MapsFragment;
 import ph.aranzazushrine.aranzazuph.Fragments.MenuFragment;
 import ph.aranzazushrine.aranzazuph.Fragments.NewsFragment;
 import ph.aranzazushrine.aranzazuph.Fragments.ResourcesFragment;
@@ -21,7 +21,7 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
     FirebaseUser currentUser;
     BottomNavigationView bottomNavigationView;
     NewsFragment newsFragment = new NewsFragment();
-    EventsFragment eventsFragment = new EventsFragment();
+    MapsFragment mapsFragment = new MapsFragment();
     BibleFragment bibleFragment = new BibleFragment();
     ResourcesFragment resourcesFragment = new ResourcesFragment();
     MenuFragment menuFragment = new MenuFragment();
@@ -52,7 +52,7 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
                 return true;
 
             case R.id.menu_events:
-                getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.fade_in, R.anim.fade_out).replace(R.id.frameContainer, eventsFragment).commit();
+                getSupportFragmentManager().beginTransaction().setCustomAnimations(R.anim.fade_in, R.anim.fade_out).replace(R.id.frameContainer, mapsFragment).commit();
                 return true;
 
             case R.id.menu_bible:

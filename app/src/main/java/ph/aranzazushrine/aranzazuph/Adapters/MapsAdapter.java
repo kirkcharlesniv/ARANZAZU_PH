@@ -41,7 +41,6 @@ public class MapsAdapter extends RecyclerView.Adapter<MapsAdapter.MyViewHolder> 
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View v;
         v = LayoutInflater.from(mContext).inflate(R.layout.item_maps, viewGroup, false);
-
         return new MyViewHolder(v);
     }
 
@@ -53,13 +52,13 @@ public class MapsAdapter extends RecyclerView.Adapter<MapsAdapter.MyViewHolder> 
         requestOptions.transforms(new CenterCrop(), new RoundedCorners(16));
 
         Glide.with(mContext)
-                .load(mData.get(i).getmURL())
+                .load(mData.get(i).getImage())
                 .apply(requestOptions)
                 .transition(DrawableTransitionOptions.withCrossFade())
                 .into(myViewHolder.mapImage);
 
-        myViewHolder.mapTitle.setText(mData.get(i).getmTitle());
-        myViewHolder.mapDesc.setText(mData.get(i).getmDesc());
+        myViewHolder.mapTitle.setText(mData.get(i).getTitle());
+        myViewHolder.mapDesc.setText(mData.get(i).getDesc());
 
     }
 

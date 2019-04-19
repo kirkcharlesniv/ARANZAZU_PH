@@ -28,7 +28,6 @@
         app:layout_constraintTop_toTopOf="@+id/image" />
 
     <View
-        android:id="@+id/name2"
         android:layout_width="48dp"
         android:layout_height="9dp"
         android:layout_alignParentEnd="true"

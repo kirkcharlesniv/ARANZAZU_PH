@@ -1,35 +1,61 @@
 package ph.aranzazushrine.aranzazuph.Models;
 
 public class Maps {
-    private String mURL, mTitle, mDesc;
+    private String image, title, desc, directions, contacts;
 
-    public Maps(String url, String title, String desc) {
-        mURL = url;
-        mTitle = title;
-        mDesc = desc;
+    public Maps() {
+        this("",
+                "Placeholder Data",
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus imperdiet malesuada sem sit amet mollis. Morbi egestas urna pretium vulputate faucibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                "@14.7060037,121.1284896,14.5z",
+                "+639451494339");
     }
 
-    public String getmURL() {
-        return mURL;
+    public Maps(String image, String title, String desc, String directions, String contacts) {
+        this.image = image;
+        this.title = title;
+        this.desc = desc;
+        this.directions = directions;
+        this.contacts = contacts;
     }
 
-    public void setmURL(String mURL) {
-        this.mURL = mURL;
+    public String getImage() {
+        return image;
     }
 
-    public String getmTitle() {
-        return mTitle;
+    public void setImage(String image) {
+        this.image = image;
     }
 
-    public void setmTitle(String mTitle) {
-        this.mTitle = mTitle;
+    public String getTitle() {
+        return title;
     }
 
-    public String getmDesc() {
-        return mDesc;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public void setmDesc(String mDesc) {
-        this.mDesc = mDesc;
+    public String getDesc() {
+        return desc;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
+
+    public String getDirections() {
+        return directions;
+    }
+
+    public void setDirections(String directions) {
+        this.directions = directions;
+    }
+
+    public String getContacts() {
+        return contacts;
+    }
+
+    public void setContacts(String contacts) {
+        this.contacts = contacts;
     }
 }
