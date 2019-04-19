@@ -26,4 +26,6 @@
     <string name="profile_picture_description">Your Profile Picture</string>
     <string name="search_button_description">Search Button</string>
     <string name="news">News</string>
+    <string name="directions"><u>Directions</u></string>
+    <string name="contact"><u>Contact</u></string>
 </resources>

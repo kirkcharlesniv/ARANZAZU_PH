@@ -82,7 +82,6 @@ public class MapsAdapter extends RecyclerView.Adapter<MapsAdapter.MyViewHolder> 
             mapImage = itemView.findViewById(R.id.mapImage);
             mapTitle = itemView.findViewById(R.id.mapTitle);
             mapDesc = itemView.findViewById(R.id.mapDesc);
-
         }
 
         @Override
